@@ -4,7 +4,7 @@
 {% block content %}
 <form method="post">
     {%csrf_token%}{{form|crispy}}
-    <p>Have an account? Login <a href="/login">Here</a></p>
+    <p>Have an account? Login <a href="/account/login">Here</a></p>
     <button type="submit" class="btn btn-success">Register</button>
 </form>
 <br>

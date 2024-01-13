@@ -47,8 +47,12 @@ def create_post(request):
     return render(request, 'main/create_post.html', {"form":form})
 
 def user_profile(request, username):
-    view_user = User.objects.get(username = username)
-    posts = Post.objects.filter(author = view_user).order_by('-created_at')
+    try:
+        view_user = User.objects.get(username = username)
+        posts = Post.objects.filter(author = view_user).order_by('-created_at')
+    except:
+        view_user = None
+        posts = None
     return render(request, 'main/user_profile.html', {"profile":view_user, "posts":posts})
 
 def signin(request):
@@ -60,4 +64,4 @@ def signin(request):
     else:
         form = RegisterForm()
     
-    return render(request, 'registration/signin.html', {"form": form})
+        return render(request, 'registration/signin.html', {"form": form})
