@@ -1,3 +1,4 @@
-pip install django
-pip install django-crispy-forms
-pip install crispy-bootstrap5
+
+crispy-bootstrap5==2023.10
+Django==5.0.1
+django-crispy-forms==2.1
